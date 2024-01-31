@@ -13,8 +13,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 public class SpringBootJpaIntegrationTest {
 
+    private final GenericBusiness genericBusiness;
+
     @Autowired
-    private GenericBusiness genericBusiness;
+    public SpringBootJpaIntegrationTest(GenericBusiness genericBusiness) {
+        this.genericBusiness = genericBusiness;
+    }
 
     @Test
     public void givenGenericEntityRepository_whenSaveAndRetrieveEntity_thenOK() {
